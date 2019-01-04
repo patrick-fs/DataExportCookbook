@@ -16,7 +16,7 @@ group by sessionid, userid)
 ![image](https://user-images.githubusercontent.com/45576380/50705505-0b40a400-1029-11e9-8c74-4b489abbe0d4.png)
 
 ## Most active sessions
-You can construct session replay URLs following the pattern in this example. You can find `your org id` by watching a session in FullStory and copying it out of the session reply URL. Your org id will be a short alpha-numeric string, for example: `1ENq`.
+You can construct session replay URLs following the pattern in this example. You can find `your org id` by watching a session in FullStory and copying the org id out of the session reply URL. Your org id will be a short alpha-numeric string, for example: `1ENq`.
 ```sql
 select count(sessionid) as "events per session",
 'https://app.fullstory.com/ui/'||'your org id'||'/session/'||userid||':'||sessionid as "session replay URL"

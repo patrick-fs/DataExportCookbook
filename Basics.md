@@ -3,7 +3,7 @@
 Keep two things in mind when analyzing your Data Export data:
 
 1. Rows are individual events created during sessions
-2. Distinct sessions can be found by using a compound key of `sessionid` + `userid`
+2. Distinct sessions can be found by grouping on a compound key of `sessionid` + `userid`
 
 ## Total session count
 ```sql

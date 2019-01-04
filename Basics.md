@@ -28,7 +28,7 @@ order by "events per session" desc
 ![image](https://user-images.githubusercontent.com/45576380/50705678-90c45400-1029-11e9-8c06-8b9bfa10f354.png)
 
 ## Sessions by length
-[Narrative description here]
+You can compute session length by finding the difference between the Min and Max `eventstart` values.
 ```sql
 select trunc(extract(second from (Max(eventstart) - Min(eventstart)))/60, 2) as "session length (minutes)",
 count(sessionid) as "events per session",

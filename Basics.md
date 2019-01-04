@@ -9,28 +9,28 @@ from
 from fsexport 
 group by sessionid, userid)
 ```
-[screengrab of results here]
+![image](https://user-images.githubusercontent.com/45576380/50705505-0b40a400-1029-11e9-8c74-4b489abbe0d4.png)
 
 ## Most active sessions
 [Narrative description here]
 ```sql
-select sessionid, userid,
-count(userid) as "events per session",
+select count(sessionid) as "events per session",
 'https://app.fullstory.com/ui/' || 'your org id here' || '/session/' || userid || ':' || sessionid as "session replay URL"
 from fsexport 
 group by sessionid, userid
-having "events per session" > 9
+having "events per session" > 35
 order by "events per session" desc
 ```
-[screengrab of results here]
+![image](https://user-images.githubusercontent.com/45576380/50705678-90c45400-1029-11e9-8c06-8b9bfa10f354.png)
 
 ## Sessions by length
 [Narrative description here]
 ```sql
-select sessionid, userid,
-trunc(extract(second from (Max(eventstart) - Min(eventstart)))/60, 2) as "session length (minutes)"
+select trunc(extract(second from (Max(eventstart) - Min(eventstart)))/60, 2) as "session length (minutes)",
+select count(sessionid) as "events per session",
+'https://app.fullstory.com/ui/' || 'your org id here' || '/session/' || userid || ':' || sessionid as "session replay URL"
 from fsexport 
 group by sessionid, userid
 order by "session length (minutes)" desc
 ```
-[screengrab of results here]
+![image](https://user-images.githubusercontent.com/45576380/50705875-295ad400-102a-11e9-9e5a-a79b9159b26a.png)

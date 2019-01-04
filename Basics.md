@@ -6,7 +6,6 @@ Keep two things in mind when analyzing your Data Export data:
 2. Distinct sessions can be found by using a compound key of `sessionid` + `userid`
 
 ## Total session count
-[Narrative description here]
 ```sql
 select count(*) as "total recorded session count for your org"
 from 
@@ -17,7 +16,7 @@ group by sessionid, userid)
 ![image](https://user-images.githubusercontent.com/45576380/50705505-0b40a400-1029-11e9-8c74-4b489abbe0d4.png)
 
 ## Most active sessions
-[Narrative description here]
+You can construct session replay URLs following the pattern in this example. You can find `your org id` by watching a session in FullStory and copying it out of the session reply URL. Your org id will be a short alpha-numeric string like `1ENq`.
 ```sql
 select count(sessionid) as "events per session",
 'https://app.fullstory.com/ui/' || 'your org id here' || '/session/' || userid || ':' || sessionid as "session replay URL"

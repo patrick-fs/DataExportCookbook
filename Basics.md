@@ -27,7 +27,7 @@ order by "events per session" desc
 [Narrative description here]
 ```sql
 select trunc(extract(second from (Max(eventstart) - Min(eventstart)))/60, 2) as "session length (minutes)",
-select count(sessionid) as "events per session",
+count(sessionid) as "events per session",
 'https://app.fullstory.com/ui/' || 'your org id here' || '/session/' || userid || ':' || sessionid as "session replay URL"
 from fsexport 
 group by sessionid, userid

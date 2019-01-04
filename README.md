@@ -1,5 +1,5 @@
 # Data Export Cookbook (WIP)
-SQL recipes for analyzing FullStory Data Export data.
+## SQL recipes for analyzing FullStory Data Export data.
 
 * The Basics: https://github.com/patrick-fs/DataExportCookbook/blob/master/Basics.md
 

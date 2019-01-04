@@ -1,3 +1,5 @@
+# Basic Recipes
+
 ## Total session count
 [Narrative description here]
 ```sql

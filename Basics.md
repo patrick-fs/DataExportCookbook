@@ -32,7 +32,7 @@ You can compute session length by finding the difference between the Min and Max
 ```sql
 select trunc(extract(second from (Max(eventstart) - Min(eventstart)))/60, 2) as "session length (minutes)",
 count(sessionid) as "events per session",
-'https://app.fullstory.com/ui/' || 'your org id here' || '/session/' || userid || ':' || sessionid as "session replay URL"
+'https://app.fullstory.com/ui/'||'your org id'||'/session/'||userid||':'||sessionid as "session replay URL"
 from fsexport 
 group by sessionid, userid
 order by "session length (minutes)" desc

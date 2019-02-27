@@ -1,4 +1,6 @@
-# Data Export Cookbook (WIP)
+# Data Export Cookbook
+
+NOTE: this cookbook has been migrated to the Hauser project wiki and is now being maintained there: https://github.com/fullstorydev/hauser/wiki
 
 ## SQL recipes for analyzing FullStory Data Export data
 
